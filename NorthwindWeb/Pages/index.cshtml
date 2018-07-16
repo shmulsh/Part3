@@ -1,4 +1,12 @@
-﻿<!DOCTYPE html>
+﻿@page
+@functions {
+public string DayName { get; set; }
+public void OnGet()
+{
+Model.DayName = DateTime.Now.ToString("dddd");
+}
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -15,7 +23,7 @@
             <h1 class="display-3">Welcome to Northwind!</h1>
             <p class="lead">We supply products to our customers.</p>
             <hr />
-            <p>Our customers include restaurants, hotels, and cruise lines.</p>
+            <p>It's @Model.DayName! Our customers include restaurants, hotels, and cruise lines.</p>
             <p>
                 <a class="btn btn-primary"
                    href="https://www.asp.net/">Learn more</a>
